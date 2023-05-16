@@ -7,7 +7,7 @@ from routes.games_route import games
 
 app = Flask(__name__)
 #CORS(app, resources={r"/*": {"origins": "*"}})
-cors = CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5000"}})
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 app.register_blueprint(users)
 app.register_blueprint(games)
@@ -27,4 +27,4 @@ def pagina_no_encontrada(error):
 if __name__=="__main__":
     app.register_error_handler(404 , pagina_no_encontrada)
     ##app.run(debug=True, host="0.0.0.0")
-    app.run(port=5000, debug=True)
+    app.run(debug=True)
