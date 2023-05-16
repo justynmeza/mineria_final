@@ -8,6 +8,11 @@ et-xmlfile==1.1.0
 experta==1.9.4
 Flask==2.2.3
 Flask-Cors==3.0.10
+Flask-Login==0.6.2
+Flask-Minify==0.37
+Flask-SQLAlchemy==3.0.2
+greenlet==2.0.0
+gunicorn==20.0.4
 fonttools==4.38.0
 frozendict==1.2
 idna==3.4
