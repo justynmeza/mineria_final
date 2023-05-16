@@ -3,12 +3,14 @@ from flask_cors import CORS, cross_origin
 from functools import wraps
 from config import *
 from routes.users_route import users
+from routes.games_route import games
 
 app = Flask(__name__)
 #CORS(app, resources={r"/*": {"origins": "*"}})
 cors = CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5000"}})
 
 app.register_blueprint(users)
+app.register_blueprint(games)
 
 @app.route('/')
 @cross_origin()  
