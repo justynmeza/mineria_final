@@ -23,7 +23,7 @@ mlxtend==0.21.0
 mysql-connector-python==8.0.32
 nlpcloud==1.0.32
 nltk==3.7
-numpy==1.23.3
+numpy==1.21.6
 openai==0.23.0
 openpyxl==3.0.10
 packaging==21.3
