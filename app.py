@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS, cross_origin
 from functools import wraps
 from config import *
@@ -15,7 +15,7 @@ app.register_blueprint(games)
 @app.route('/')
 @cross_origin()  
 def index():
-    return jsonify({'message': 'welcome to games sales api'})
+    return render_template('index.html')
 
     
 def pagina_no_encontrada(error):

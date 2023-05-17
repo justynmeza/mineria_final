@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color: rgb(224, 224, 224);
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+        }
+        .title{
+            margin: 10vh;
+        }
+        .containerRoutes{
+            background-color: white;
+            border: 1px solid gray;
+            border-radius: 10px;
+            width: 90vh;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .routes{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .route{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 30vh;
+        }
+        .method{
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 5vh;
+            height: 3vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 2vh;
+            user-select: none;
+        }
+        .get{
+            background-color: rgb(0, 255, 0);
+        }
+        .post{
+            background-color: rgb(251, 255, 0);
+        }
+        .put{
+            background-color: rgb(0, 255, 242);
+        }
+        .delete{
+            background-color: rgb(255, 72, 0);
+        }
+        .title-method{
+            margin-right: 1vh;
+        }
+        .url{
+            padding: 5px 10px;
+            background-color: rgba(226, 226, 226, 0.815);
+            border: 1px solid gray;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <title>API GAMES SALES</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">API GAME SALES</h1>
+        <div class="containerRoutes">
+            <div class="routes">
+                <div class="route users"><span class="method get">GET</span><h3 class="title-method">Users List</h3><span class="url">/userslist</span></div>
+                <div class="route users"><span class="method get">GET</span><h3 class="title-method">Users By Id</h3><span class="url">/user</span></div>
+            </div>
+            <div class="routes">
+                <div class="route games"><span class="method get">GET</span><h3 class="title-method">Games List</h3><span class="url">/gameslist</span></div>
+                <div class="route games"><span class="method get">GET</span><h3 class="title-method">Games By Id</h3><span class="url">/game</span></div>
+                <div class="route games"><span class="method post">POST</span><h3 class="title-method">Create Users</h3><span class="url">/game/create</span></div>
+                <div class="route games"><span class="method put">PUT</span><h3 class="title-method">Update Users</h3><span class="url">/game/update</span></div>
+                <div class="route games"><span class="method delete">DEL</span><h3 class="title-method">Delete Users</h3><span class="url">/delete</span></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

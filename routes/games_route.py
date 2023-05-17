@@ -6,7 +6,7 @@ con_games = games_controller()
 
 games = Blueprint('games', __name__)
 
-@games.route('/gamelist', methods=['GET'])
+@games.route('/gameslist', methods=['GET'])
 @cross_origin()
 def gamelist():
     return con_games.c_consult_games()
@@ -21,12 +21,12 @@ def game_by_id():
 def game_create():
     return con_games.c_create_game()
 
-@games.route('/game/update', methods=['POST'])
+@games.route('/game/update', methods=['PUT', 'POST'])
 @cross_origin()
 def game_update():
     return con_games.c_update_game()
 
-@games.route('/game/delete', methods=['POST'])
+@games.route('/game/delete', methods=['DELETE', 'POST'])
 @cross_origin()
 def game_delete():
     return con_games.c_delete_game()
