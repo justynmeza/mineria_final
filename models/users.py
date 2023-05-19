@@ -31,6 +31,11 @@ class User():
                     'username':result[4],
                     'password':result[5]
                 }
+                # `payload.append(content)` is adding a dictionary `content` to a list `payload`. The
+                # `content` dictionary contains information about a user, such as their id, name,
+                # lastname, email, username, and password. This is part of a method `m_consult_user`
+                # that retrieves all users from a database and returns their information in JSON
+                # format.
                 payload.append(content)
                 content = {}
             print(payload)
@@ -105,6 +110,19 @@ class User():
             return 'ok'
         except (Exception, psycopg2.DatabaseError) as error:
             return error
+            
+    def m_update_token(self):
+        try:
+            id_user = request.json['id']
+
+            cursor = connection.cursor()
+            cursor.execute(f'UPDATE "tblToken" SET "ExpiredTime" = \'{self.consult_time()}\' WHERE "IdUser" = {id_user};')
+            cursor.connection.commit()
+            cursor.close()
+            print('ok')
+            return jsonify({'information':'update token time'})
+        except (Exception, psycopg2.DatabaseError) as error:
+            return jsonify({'information':error})
         
     def consult_time(self):
         ahora = datetime.datetime.now()

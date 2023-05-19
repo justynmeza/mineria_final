@@ -16,3 +16,8 @@ def userslist():
 @cross_origin()
 def user_by_id():
     return con_user.c_consult_user_by_id()
+
+@users.route('/user/token', methods=['PUT', 'POST'])
+@cross_origin()
+def update_user_token():
+    return con_user.c_update_user_token()
