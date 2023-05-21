@@ -4,6 +4,7 @@ from functools import wraps
 from config import *
 from routes.users_route import users
 from routes.games_route import games
+from routes.predict_route import predict
 
 app = Flask(__name__)
 #CORS(app, resources={r"/*": {"origins": "*"}})
@@ -11,6 +12,7 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 app.register_blueprint(users)
 app.register_blueprint(games)
+app.register_blueprint(predict)
 
 @app.route('/')
 @cross_origin()  
