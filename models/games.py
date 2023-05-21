@@ -34,10 +34,10 @@ class Games():
                     'year':result[3],
                     'gender':result[4],
                     'publisher':result[5],
-                    'north america':result[6],
+                    'north_america':result[6],
                     'europe':result[7],
                     'japan':result[8],
-                    'rest of world':result[9],
+                    'rest_of_world':result[9],
                     'global':result[10]
                 }
                 payload.append(content)
@@ -65,10 +65,10 @@ class Games():
                     'year':result[3],
                     'gender':result[4],
                     'publisher':result[5],
-                    'north america':result[6],
+                    'north_america':result[6],
                     'europe':result[7],
                     'japan':result[8],
-                    'rest of world':result[9],
+                    'rest_of_world':result[9],
                     'global':result[10]
                 }
                 payload.append(content)
@@ -86,10 +86,10 @@ class Games():
             year = request.json['year']
             gender = request.json['gender']
             publisher = request.json['publisher']
-            north_america = request.json['north america']
+            north_america = request.json['north_america']
             europe = request.json['europe']
             japan = request.json['japan']
-            rest_of_world = request.json['rest of world']
+            rest_of_world = request.json['rest_of_world']
             global_game = request.json['global']
 
             cursor = connection.cursor()
@@ -110,10 +110,10 @@ class Games():
             year = request.json['year']
             gender = request.json['gender']
             publisher = request.json['publisher']
-            north_america = request.json['north america']
+            north_america = request.json['north_america']
             europe = request.json['europe']
             japan = request.json['japan']
-            rest_of_world = request.json['rest of world']
+            rest_of_world = request.json['rest_of_world']
             global_game = request.json['global']
 
             cursor = connection.cursor()
