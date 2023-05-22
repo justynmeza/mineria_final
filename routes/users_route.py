@@ -21,3 +21,4 @@ def user_by_id():
 @cross_origin()
 def update_user_token():
     return con_user.c_update_user_token()
+

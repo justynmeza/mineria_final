@@ -148,3 +148,155 @@ class Games():
             return jsonify({'information':'deleted successfully'})
         except (Exception, psycopg2.DatabaseError) as error:
             return jsonify({'information':error})
+
+    def m_all_genders(self):
+        try:
+            cursor = connection.cursor()
+            cursor.execute('SELECT DISTINCT "Genre" FROM "tblGames"')
+            rv = cursor.fetchall()
+            cursor.close()
+            payload = []
+            content = {}
+            for result in rv:
+                content = {
+                    'gender':result[0]
+                }
+                payload.append(content)
+                content = {}
+            print(payload)
+            return jsonify(payload)
+        except (Exception, psycopg2.DatabaseError) as error:
+            return jsonify({'information':error})
+
+    def m_all_consoles(self):
+        try:
+            cursor = connection.cursor()
+            cursor.execute('SELECT DISTINCT "Console" FROM "tblGames"')
+            rv = cursor.fetchall()
+            cursor.close()
+            payload = []
+            content = {}
+            for result in rv:
+                content = {
+                    'console':result[0]
+                }
+                payload.append(content)
+                content = {}
+            print(payload)
+            return jsonify(payload)
+        except (Exception, psycopg2.DatabaseError) as error:
+            return jsonify({'information':error})
+
+    def m_best_5_game_sales(self):
+        try:
+            cursor = connection.cursor()
+            cursor.execute('SELECT "Game" FROM "tblGames" ORDER BY "Global" DESC LIMIT 5')
+            rv = cursor.fetchall()
+            cursor.close()
+            payload = []
+            content = {}
+            for result in rv:
+                content = {
+                    'game':result[0]
+                }
+                payload.append(content)
+                content = {}
+            print(payload)
+            return jsonify(payload)
+        except (Exception, psycopg2.DatabaseError) as error:
+            return jsonify({'information':error})
+
+    def m_best_game_north_america(self):
+        try:
+            cursor = connection.cursor()
+            cursor.execute('SELECT "Game" FROM "tblGames" ORDER BY "North America" DESC LIMIT 1')
+            rv = cursor.fetchall()
+            cursor.close()
+            payload = []
+            content = {}
+            for result in rv:
+                content = {
+                    'game':result[0]
+                }
+                payload.append(content)
+                content = {}
+            print(payload)
+            return jsonify(payload)
+        except (Exception, psycopg2.DatabaseError) as error:
+            return jsonify({'information':error})
+
+    def m_best_game_europe(self):
+        try:
+            cursor = connection.cursor()
+            cursor.execute('SELECT "Game" FROM "tblGames" ORDER BY "Europe" DESC LIMIT 1')
+            rv = cursor.fetchall()
+            cursor.close()
+            payload = []
+            content = {}
+            for result in rv:
+                content = {
+                    'game':result[0]
+                }
+                payload.append(content)
+                content = {}
+            print(payload)
+            return jsonify(payload)
+        except (Exception, psycopg2.DatabaseError) as error:
+            return jsonify({'information':error})
+
+    def m_best_game_japan(self):
+        try:
+            cursor = connection.cursor()
+            cursor.execute('SELECT "Game" FROM "tblGames" ORDER BY "Japan" DESC LIMIT 1')
+            rv = cursor.fetchall()
+            cursor.close()
+            payload = []
+            content = {}
+            for result in rv:
+                content = {
+                    'game':result[0]
+                }
+                payload.append(content)
+                content = {}
+            print(payload)
+            return jsonify(payload)
+        except (Exception, psycopg2.DatabaseError) as error:
+            return jsonify({'information':error})
+
+    def m_best_game_rest_of_world(self):
+        try:
+            cursor = connection.cursor()
+            cursor.execute('SELECT "Game" FROM "tblGames" ORDER BY "Rest of World" DESC LIMIT 1')
+            rv = cursor.fetchall()
+            cursor.close()
+            payload = []
+            content = {}
+            for result in rv:
+                content = {
+                    'game':result[0]
+                }
+                payload.append(content)
+                content = {}
+            print(payload)
+            return jsonify(payload)
+        except (Exception, psycopg2.DatabaseError) as error:
+            return jsonify({'information':error})
+
+    def m_best_game_global(self):
+        try:
+            cursor = connection.cursor()
+            cursor.execute('SELECT "Game" FROM "tblGames" ORDER BY "Global" DESC LIMIT 1')
+            rv = cursor.fetchall()
+            cursor.close()
+            payload = []
+            content = {}
+            for result in rv:
+                content = {
+                    'game':result[0]
+                }
+                payload.append(content)
+                content = {}
+            print(payload)
+            return jsonify(payload)
+        except (Exception, psycopg2.DatabaseError) as error:
+            return jsonify({'information':error})
