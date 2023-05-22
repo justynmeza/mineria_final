@@ -54,15 +54,15 @@ class User():
             payload = []
             content = {}
             for result in rv:
-                id_game = result[0]
+                id_user = result[0]
                 content = {
-                    'id':id_game,
+                    'id':id_user,
                     'name':result[1],
                     'lastname':result[2],
                     'email':result[3],
                     'username':result[4],
                     'password':result[5],
-                    'token':self.create_token(id_game)
+                    'token':self.create_token(id_user)
                 }
                 payload.append(content)
                 content = {}
@@ -71,6 +71,31 @@ class User():
         except (Exception, psycopg2.DatabaseError) as error:
             return jsonify({'information':error})
         
+    def m_consult_user_by_username_password(self):
+        try:
+            username = request.json['username'];
+            password = request.json['password'];
+
+            cursor = connection.cursor()
+            cursor.execute(f'SELECT "IdUser", "Username", "Password" FROM "tblUsers" WHERE "Username" = \'{username}\' AND "Password" = \'{password}\'')
+            rv = cursor.fetchall()
+            cursor.close()
+            payload = []
+            content = {}
+            for result in rv:
+                id_user = result[0]
+                content = {
+                    'id':id_user,
+                    'username':result[1],
+                    'password':result[2],
+                    'token':self.create_token(id_user)
+                }
+                payload.append(content)
+                content = {}
+            print(payload)
+            return jsonify(payload)
+        except (Exception, psycopg2.DatabaseError) as error:
+            return jsonify({'information':error})
 
     def create_token(self, id):
         try:

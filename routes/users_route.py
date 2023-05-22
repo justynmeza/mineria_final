@@ -22,3 +22,7 @@ def user_by_id():
 def update_user_token():
     return con_user.c_update_user_token()
 
+@users.route('/user/login', methods=['GET', 'POST'])
+@cross_origin()
+def consult_user_by_username_password():
+    return con_user.c_consult_user_by_username_password()

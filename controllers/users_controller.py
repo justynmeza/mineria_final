@@ -17,3 +17,7 @@ class User_controller():
     def c_update_user_token(self):
         query = mod_user.m_update_token()
         return query
+    
+    def c_consult_user_by_username_password(self):
+        query = mod_user.m_consult_user_by_username_password()
+        return query
