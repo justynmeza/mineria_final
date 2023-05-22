@@ -159,7 +159,8 @@ class Games():
             content = {}
             for result in rv:
                 content = {
-                    'gender':result[0]
+                    'gender':result[0],
+                    'global':result[1]
                 }
                 payload.append(content)
                 content = {}
@@ -178,7 +179,8 @@ class Games():
             content = {}
             for result in rv:
                 content = {
-                    'console':result[0]
+                    'console':result[0],
+                    'global':result[1]
                 }
                 payload.append(content)
                 content = {}
@@ -190,14 +192,15 @@ class Games():
     def m_best_5_game_sales(self):
         try:
             cursor = connection.cursor()
-            cursor.execute('SELECT "Game" FROM "tblGames" ORDER BY "Global" DESC LIMIT 5')
+            cursor.execute('SELECT "Game", "Global" FROM "tblGames" ORDER BY "Global" DESC LIMIT 5')
             rv = cursor.fetchall()
             cursor.close()
             payload = []
             content = {}
             for result in rv:
                 content = {
-                    'game':result[0]
+                    'game':result[0],
+                    'global':result[1]
                 }
                 payload.append(content)
                 content = {}
@@ -209,14 +212,15 @@ class Games():
     def m_best_game_north_america(self):
         try:
             cursor = connection.cursor()
-            cursor.execute('SELECT "Game" FROM "tblGames" ORDER BY "North America" DESC LIMIT 1')
+            cursor.execute('SELECT "Game", "Global" FROM "tblGames" ORDER BY "North America" DESC LIMIT 1')
             rv = cursor.fetchall()
             cursor.close()
             payload = []
             content = {}
             for result in rv:
                 content = {
-                    'game':result[0]
+                    'game':result[0],
+                    'global':result[1]
                 }
                 payload.append(content)
                 content = {}
@@ -228,14 +232,15 @@ class Games():
     def m_best_game_europe(self):
         try:
             cursor = connection.cursor()
-            cursor.execute('SELECT "Game" FROM "tblGames" ORDER BY "Europe" DESC LIMIT 1')
+            cursor.execute('SELECT "Game", "Global" FROM "tblGames" ORDER BY "Europe" DESC LIMIT 1')
             rv = cursor.fetchall()
             cursor.close()
             payload = []
             content = {}
             for result in rv:
                 content = {
-                    'game':result[0]
+                    'game':result[0],
+                    'global':result[1]
                 }
                 payload.append(content)
                 content = {}
@@ -247,14 +252,15 @@ class Games():
     def m_best_game_japan(self):
         try:
             cursor = connection.cursor()
-            cursor.execute('SELECT "Game" FROM "tblGames" ORDER BY "Japan" DESC LIMIT 1')
+            cursor.execute('SELECT "Game", "Global" FROM "tblGames" ORDER BY "Japan" DESC LIMIT 1')
             rv = cursor.fetchall()
             cursor.close()
             payload = []
             content = {}
             for result in rv:
                 content = {
-                    'game':result[0]
+                    'game':result[0],
+                    'global':result[1]
                 }
                 payload.append(content)
                 content = {}
@@ -266,14 +272,15 @@ class Games():
     def m_best_game_rest_of_world(self):
         try:
             cursor = connection.cursor()
-            cursor.execute('SELECT "Game" FROM "tblGames" ORDER BY "Rest of World" DESC LIMIT 1')
+            cursor.execute('SELECT "Game", "Global" FROM "tblGames" ORDER BY "Rest of World" DESC LIMIT 1')
             rv = cursor.fetchall()
             cursor.close()
             payload = []
             content = {}
             for result in rv:
                 content = {
-                    'game':result[0]
+                    'game':result[0],
+                    'global':result[1]
                 }
                 payload.append(content)
                 content = {}
@@ -285,14 +292,15 @@ class Games():
     def m_best_game_global(self):
         try:
             cursor = connection.cursor()
-            cursor.execute('SELECT "Game" FROM "tblGames" ORDER BY "Global" DESC LIMIT 1')
+            cursor.execute('SELECT "Game", "Global" FROM "tblGames" ORDER BY "Global" DESC LIMIT 1')
             rv = cursor.fetchall()
             cursor.close()
             payload = []
             content = {}
             for result in rv:
                 content = {
-                    'game':result[0]
+                    'game':result[0],
+                    'global':result[1]
                 }
                 payload.append(content)
                 content = {}
